@@ -6,6 +6,8 @@ target/
 !**/src/test/**/target/
 mvnw
 mvnw.cmd
+.gitignore
+src/main/java/com/algaworks/algafood/jpa/*
 
 ### STS ###
 .apt_generated
