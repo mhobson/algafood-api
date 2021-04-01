@@ -18,12 +18,12 @@ public class CozinhaRepositoryImpl implements CozinhaRepository {
 	private EntityManager manager;
 
 	@Override
-	public List<Cozinha> listarTodos() {
+	public List<Cozinha> listar() {
 		return manager.createQuery("from Cozinha", Cozinha.class).getResultList();	
 	}
 	
 	@Override
-	public Cozinha buscarPorId(Long id) {
+	public Cozinha buscar(Long id) {
 		return manager.find(Cozinha.class, id);
 	}
 	
@@ -36,7 +36,7 @@ public class CozinhaRepositoryImpl implements CozinhaRepository {
 	@Transactional
 	@Override
 	public void remover(Cozinha cozinha) {
-		cozinha = buscarPorId(cozinha.getId());
+		cozinha = buscar(cozinha.getId());
 		manager.remove(cozinha);
 	}
 
